@@ -1,11 +1,15 @@
 const categoriesRef = document.querySelectorAll('.item');
 
-console.log(`Number of categories: ${categoriesRef.length}`);
+const totalCategories = elements => {
+  console.log(`Number of categories: ${elements.length}`);
 
-categoriesRef.forEach(category => {
-  const categoryRef = category.firstElementChild.textContent;
-  console.log(`Category: ${categoryRef}`);
+  elements.forEach(category => {
+    const categoryRef = category.firstElementChild.textContent;
+    console.log(`Category: ${categoryRef}`);
 
-  const elementsRef = category.lastElementChild.children.length;
-  console.log(`Elements: ${elementsRef}`);
-});
+    const elementsRef = category.lastElementChild.children.length;
+    console.log(`Elements: ${elementsRef}`);
+  });
+};
+
+totalCategories(categoriesRef);
