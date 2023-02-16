@@ -4,8 +4,10 @@ inputRef.addEventListener('blur', onInputBlur);
 
 function onInputBlur(event) {
   if (event.currentTarget.value.length === Number(inputRef.dataset.length)) {
-    inputRef.style.borderColor = '#4caf50';
+    inputRef.classList.add('valid');
+    inputRef.classList.remove('invalid');
   } else {
-    inputRef.style.borderColor = '#f44336';
+    inputRef.classList.add('invalid');
+    inputRef.classList.remove('valid');
   }
 }

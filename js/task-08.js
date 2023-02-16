@@ -7,12 +7,12 @@ function onControlForm(event) {
 
   const { email, password } = event.currentTarget;
 
-  if (email.value === '' || password.value === '') {
+  if (email.value.trim() === '' || password.value === '') {
     return alert('Внимание! Все поля должны быть заполнены');
   }
 
   const elements = {
-    Email: `${email.value}`,
+    Email: `${email.value.trim()}`,
     Password: `${password.value}`,
   };
   console.log(elements);
