@@ -1,13 +1,18 @@
 const inputRef = document.querySelector('#validation-input');
+const valid = 'valid';
+const invalid = 'invalid';
 
 inputRef.addEventListener('blur', onInputBlur);
 
 function onInputBlur(event) {
   if (event.currentTarget.value.length === Number(inputRef.dataset.length)) {
-    inputRef.classList.add('valid');
-    inputRef.classList.remove('invalid');
+    updateClass(valid, invalid);
   } else {
-    inputRef.classList.add('invalid');
-    inputRef.classList.remove('valid');
+    updateClass(invalid, valid);
+  }
+
+  function updateClass(add, remove) {
+    inputRef.classList.add(add);
+    inputRef.classList.remove(remove);
   }
 }
