@@ -13,8 +13,9 @@ function onCreateBoxes() {
 }
 
 function onDestroyBoxes() {
-  creatBoxParent.remove();
+  // creatBoxParent.remove();
   inputRef.value = '';
+  creatBoxParent.innerHTML = '';
 }
 
 function createBoxes(amount) {
